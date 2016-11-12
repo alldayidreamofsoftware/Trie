@@ -5,14 +5,9 @@ public class Solution {
 	public static void main(String[] args) {
 
 			String urls[] = {
-								"http://www.linkedin.com",
-								"www.samsung.com",
-								"www.samsung.com",
-								"www.google.com",
-								"www.google.com",
-								"http://www.linkedin.com",
-								"www.korea.com",
-								"www.korea.com"
+								"hello",
+								"world",
+								"wecandoit"
 							};
 			
 			UniqueUrl root = new UniqueUrl();
@@ -21,7 +16,9 @@ public class Solution {
 				root.insert(urls[i]);
 								
 			}
-			System.out.print(root.getUniqueUrl());
+			root.printTrieNoStack(root);
+			//root.delete("www.google.com");
+			//System.out.print(root.getUniqueUrl());
 	}
 
 }

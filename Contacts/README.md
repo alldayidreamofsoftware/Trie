@@ -38,3 +38,14 @@
 #Find and print the number of contact names beginning with hac. There are currently two contact names in the application and both of them start with hac, so we print  on a new line.
 #Find and print the number of contact names beginning with hak. There are currently two contact names in the application but neither of them start with hak, so we print  on a new line.
 
+
+#We use a trie data structure and each node stores a character. The root node we maintain a null string. Leaf nodes we mark with a boolean variable. We maintain two hashmaps. One hashmaps gives us
+# the trienode character given the character as key. That way we can traverse to the child. We maintain one more hashmap for keeping a count of children. Assume the root node is null. There are 
+#children starting with a,b...z. If we says how many children start with a? we will have to know all the words that start with a and have been inserted into the trie datastructure. In insertion
+#it definetely passes through the node a. Similarly how many children are with ab as the prefix? From the below figure I can say at the root how many words start with a or h ? Essentially
+#how many words have a or h as prefix?
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# |value | leaf node | hashmap for children(where is the next node pointer for character a,b etc ?)| hashmap for count(a,b,c.d.....z)                              |
+# |																																								   |
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------

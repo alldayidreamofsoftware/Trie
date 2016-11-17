@@ -57,37 +57,37 @@ public class Solution {
                 if(current.children.get(ch) == null) {
                     TrieNode newNode = new TrieNode();
                     current.children.put(ch,newNode);
-					
+                    
                 }
-				Integer value = current.childrenCount.get(ch);
-				if(value == null) {
-					current.childrenCount.put(ch,1);    
-				}
-				else {
-					value++;
-					current.childrenCount.put(ch,value);
-				}
-				current = current.children.get(ch);
+                Integer value = current.childrenCount.get(ch);
+                if(value == null) {
+                    current.childrenCount.put(ch,1);    
+                }
+                else {
+                    value++;
+                    current.childrenCount.put(ch,value);
+                }
+                current = current.children.get(ch);
             }
-			current.leafNode = true;
+            current.leafNode = true;
         }
-		public Integer find(String str) {
-			TrieNode current = root;
+        public Integer find(String str) {
+            TrieNode current = root;
             Character ch='\0';
             int count=0;
-			for(int i = 0; i < str.length(); i++) {
-				ch = str.charAt(i);
-				if(current.children.get(ch) == null) {
-					return 0;
-				}
+            for(int i = 0; i < str.length(); i++) {
+                ch = str.charAt(i);
+                if(current.children.get(ch) == null) {
+                    return 0;
+                }
                 count =current.childrenCount.get(ch);
                 current = current.children.get(ch);
-			}
-			
+            }
+            
             return count;
-			
-		}
-		
+            
+        }
+        
         
         
     }
